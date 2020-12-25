@@ -16,7 +16,7 @@ binomialFunction x y =
 
       y_part = 0
   in
-      wrongValue 
+      wrongValue
 
 
 -- Currying: you can use the function you declared before and re-use it here

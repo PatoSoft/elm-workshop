@@ -22,27 +22,19 @@ require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 function execute_test {
   local file=$1
   local cmd="elm-test $file"
-  local output=`$cmd`
+  local output=$($cmd 2>&1)
 
-  echo "$output"
-  if [ $? != 0 ] 
-  then
-    echo $output
-    return 1
-  fi
-  echo "$?"
-  echo "not zero"
-  return 0
+  while grep -qie 'TEST RUN FAILED\|Compilation failed' <<< "$output";
+  do
+    echo -E "$output"
+    fswatch -1 -0 'src' #| xargs -0 -n 1 -I {} "pwd"
+    output=$($cmd 2>&1)
+  done
+  echo 'passed'
 }
 
 pushd ./Part1-Language
-for testFile in $(find 'tests' -iname '*.elm' | sort -z)
+for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
   execute_test $testFile
-
-  if [ $? != 0 ] 
-  then
-    popd 
-    exit 0;
-  fi
 done
