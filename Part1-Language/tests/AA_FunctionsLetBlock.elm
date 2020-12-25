@@ -1,6 +1,6 @@
 module AA_FunctionsLetBlock exposing (suite)
 
-import FunctionsBasics exposing (..)
+import A_FunctionsBasics exposing (..)
 import Test exposing (..)
 import Expect exposing (..)
 
@@ -11,4 +11,4 @@ suite =
     in the file
     FunctionBasics.elm 
     """ <|
-      \_ -> Expect.equal 30 (FunctionsBasics.binomialFunction 5 2)
+      \_ -> Expect.equal 30 (A_FunctionsBasics.binomialFunction 5 2)
