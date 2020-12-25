@@ -1,6 +1,6 @@
 module AB_FunctionsSumWithCurrying exposing (suite)
 
-import FunctionsBasics exposing (..)
+import A_FunctionsBasics exposing (..)
 import Test exposing (..)
 import Expect exposing (..)
 

@@ -39,9 +39,8 @@ function execute_test {
 }
 
 pushd ./Part1-Language
-for testFile in $(find 'tests' -iname '*.elm')
+for testFile in $(find 'tests' -iname '*.elm' | sort -z)
 do
-  echo $testFile
   execute_test $testFile
 
   if [ $? != 0 ] 
