@@ -1,26 +1,23 @@
 #!/bin/bash
 
-if ! command -v npm &> /dev/null
-then
-  echo "npm not found"
-  echo "please install it from here: "
-  echo "https://nodejs.org/en/"
-fi
+function require_cmd() {
+  local cmd=$1
+  local url=$2
 
-if ! command -v elm &> /dev/null
-then
-  echo "elm not found"
-  echo "please install it from here: "
-  echo "https://guide.elm-lang.org/install/elm.html"
-fi
+  if ! command -v $cmd &> /dev/null
+  then
+    echo "$cmd not found"
+    echo "please install it from here: "
+    echo "$url"
+    exit 0
+  fi
+}
 
-if ! command -v npm &> /dev/null
-then
-  exit
-elif ! command -v elm &> /dev/null 
-then
-  exit
-fi
+require_cmd 'npm' 'https://nodejs.org/en/'
+require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
+require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
+
+# Install fswatch
 
 function execute_test {
   local file=$1
