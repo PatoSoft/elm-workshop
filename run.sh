@@ -39,6 +39,9 @@ function execute_test {
   done
 }
 
+# TODO: Fix the flow for people returning to the project:
+# - Show the overall progress
+# - Skip the text when an example is passed
 function show_step {
   local file=$1
 
