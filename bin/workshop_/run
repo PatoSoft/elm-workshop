@@ -1,23 +1,11 @@
 #!/bin/bash
 
-function require_cmd() {
-  local cmd=$1
-  local url=$2
-
-  if ! command -v $cmd &> /dev/null
-  then
-    echo "$cmd not found"
-    echo "please install it from here: "
-    echo "$url"
-    exit 0
-  fi
-}
+require 'dependency_helper.sh'
+require 'workshop_helper.sh'
 
 require_cmd 'npm' 'https://nodejs.org/en/'
 require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
 require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
-
-require 'workshop_helper.sh'
 
 # TODO: Fix the flow for people returning to the project:
 # - Show the overall progress
