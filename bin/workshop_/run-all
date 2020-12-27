@@ -2,13 +2,15 @@
 # desc: runs all the tests
 # This is for debugging purposes, to test that the implementation of the workshop works as expected
 
-pushd ./Part1-Language
+require 'workshop_helper.sh'
 
+pushd ./Part1-Language
 for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
   echo "-----------------------------------------------"
   echo "    Running tests for $testFile"
   echo "-----------------------------------------------"
-  elm-test "$testFile"
+  show_explanation $testFile
+  execute_test $testFile 'run-once'
 done
-pushd
+popd

@@ -17,27 +17,7 @@ require_cmd 'npm' 'https://nodejs.org/en/'
 require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
 require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 
-function show_explanation {
-  local file=$1
-  sed '/^-}/q' "$file" | sed  '2d;$d'
-  echo "-----------------------"
-  echo ""
-  echo "Press enter to start"
-  read 
-}
-
-function execute_test {
-  local file=$1
-  local cmd="elm-test $file"
-  local output=$($cmd 2>&1)
-
-  while grep -qie 'TEST RUN FAILED\|Compilation failed' <<< "$output";
-  do
-    echo -E "$output"
-    fswatch -1 -0 'src' #| xargs -0 -n 1 -I {} "pwd"
-    output=$($cmd 2>&1)
-  done
-}
+require 'workshop_helper.sh'
 
 # TODO: Fix the flow for people returning to the project:
 # - Show the overall progress
@@ -46,6 +26,7 @@ function show_step {
   local file=$1
 
   show_explanation $file
+  wait_to_start
   execute_test $file
 }
 
@@ -54,3 +35,4 @@ for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
   show_step $testFile
 done
+popd
