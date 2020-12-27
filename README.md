@@ -41,16 +41,16 @@ The `workshop` command is a bash script built using a bash command library built
 you can find the different helper commands by running
 
 ```
-workshop help
+./workshop help
 ```
 
 You can also create new helper commands by running 
 ```
-workshop generate <command-name>
+./workshop generate <command-name>
 ```
 
 To run all tests and see all the documentation at once you can run
 
 ```
-workshop run-all
+./workshop run-all
 ```
