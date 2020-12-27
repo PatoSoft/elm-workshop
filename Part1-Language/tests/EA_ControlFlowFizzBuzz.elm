@@ -4,10 +4,11 @@ We are going to look at if conditions in elm.
 Later on we will look at an alternative implementation but for now we
 can implement it using an if/else condition.
 
-In elm you can use if/else, you don't have as in other languages
-the concept of 'elseif' the sintax for if else is the following:
+In elm you can use if/else:
 
   if [boolean condition] then
+    [statement]
+  else if [boolean condition] then
     [statement]
   else
     [statement]
