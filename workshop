@@ -7,4 +7,9 @@ set -e
 
 source "${BASH_SOURCE%/*}/bin/lib/commands_helper.sh"
 
-execute_command "${@:1}"
+if [ -z "$1" ] 
+then
+  execute_command 'run'
+else
+  execute_command "${@:1}"
+fi
