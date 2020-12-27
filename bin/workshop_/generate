@@ -1,0 +1,13 @@
+#!/bin/bash
+# params: [TYPE] [COMMAND_NAME]
+# desc: allows you to generate a sub command for $project or create a entirely new command
+# TYPE: command 
+# COMMAND_NAME: name of the command you want to generate
+# examples:
+# $project generate command 
+# 
+
+echo "Argument missing"
+echo 
+
+show_help "generate"

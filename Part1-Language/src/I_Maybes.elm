@@ -1,10 +1,9 @@
-module GenericParameters exposing (..)
+module I_Maybes exposing (..)
 
 
 ternaryOperator : Bool -> a -> a -> a
 ternaryOperator valid valueIfTrue valueIfFalse =
   valueIfTrue
-
 
 
 -- similar to what we did before maybe makes sense

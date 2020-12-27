@@ -1,0 +1,142 @@
+#!/bin/bash
+# params: [COMMAND]
+# desc: Prints this help or detailed help for commands running $project help COMMAND
+# You can run help against sub commands
+#
+# EXAMPLES: 
+# $project help help     prints this help
+# $project help hello    prints a detailed help for the hello command
+
+require 'error_handling.sh'
+
+screen_width=$(tput cols)
+command_width=20
+remaining_width=$(($screen_width - $command_width - 2))
+args_width=$(($remaining_width / 3))
+description_width=$(($remaining_width - $args_width))
+
+HELP_LINE_SPLIT=(20 $args_width $description_width)
+
+function print_commands_by_folder {
+  local dir="$1"
+  echo 
+
+  for file in $(find "$dir" -executable -type f | sort); do
+    local header=$(header_comment $file)
+
+    local command_name=$(file_name_to_command $file)
+    IFS=$'\n'; command_name_array=($(split_string_in_lines_by_width "$command_name" "${HELP_LINE_SPLIT[0]}"))
+
+    local params=$(params "$header")
+    IFS=$'\n'; params_array=($(split_string_in_lines_by_width "$params" "${HELP_LINE_SPLIT[1]}"))
+
+    local description=$(description "$header")
+
+    IFS=$'\n'; description_array=($(split_string_in_lines_by_width "$description" "${HELP_LINE_SPLIT[2]}"))
+
+    local row_length=$(max_line_length "${#command_name_array[@]}" "${#description_array[@]}" "${#params_array[@]}")
+    local off_one_length=$(($row_length - 1))
+
+    for i in $(seq 0 $off_one_length)
+    do
+      local command_line=$(printf "%-${HELP_LINE_SPLIT[0]}s" "${command_name_array[$i]}")
+      local params_line=$(printf "%-${HELP_LINE_SPLIT[1]}s" "${params_array[$i]}")
+      local description_line=$(printf "%-${HELP_LINE_SPLIT[2]}s" "${description_array[$i]}")
+      echo "$command_line $params_line $description_line"
+    done
+  done
+}
+
+function split_string_in_lines_by_width {
+  echo "$1" | fold -sw $2
+}
+
+function max_line_length {
+  echo "$@" | tr ' ' '\n' | sort -g | tail -n 1
+}
+
+function print_command_help {
+  local file=$(find_existing_command_path ${@:1})
+
+  if [[ ! -f "$file" ]]; then
+    echo "Sorry, can't find the command $1 $2 "
+    show_help
+    exit 1
+  fi
+
+  local command_name=$(file_name_to_command $file)
+  local header=$(header_comment "$file")
+  local description=$(description "$header")
+  local params=$(params "$header")
+  echo "NAME:"
+  if [[ -z "${description// }" ]]; then
+    echo "$(project_name) $command_name"
+  else
+    echo "$(project_name) $command_name - $description"
+  fi
+  echo 
+
+  if [[ ! -z "$params" ]]; then
+    echo "SYNOPSYS:"
+    echo "$(project_name) $command_name $params"
+    echo
+  fi
+
+  if [[ -d "${file}_" ]]; then
+    echo "SUBCOMMANDS:"
+    print_commands_by_folder "${file}_"
+    echo 
+  fi
+
+  local full_description=$(full_description "$header")
+  echo "DESCRIPTION:"
+  echo 
+  echo "$full_description"
+}
+
+function description {
+  local header_comment="$1"
+  extract_lines "$header_comment" "# desc: "
+}
+
+function full_description {
+  local header_comment="$1"
+  echo "$header_comment" | grep -v "^# \(desc:\|params:\)" | sed "s/^#\s*//"
+}
+
+function params {
+  local header_comment="$1"
+  extract_lines "$header_comment" "# params: "
+}
+
+function join_by {
+  local d=$1
+  shift
+  echo -n "$1"
+  shift
+  printf "%s" "${@/#/$d}"
+}
+
+function join {
+  join_by ", " "$@"
+}
+
+function header_comment {
+  local file="$1"
+
+  sed '/^[^#]/q' "$file" | sed \$d | sed '/^#!/d' | sed "s/\$project/$(project_name)/g" 
+}
+
+function extract_lines {
+  local string="$1"
+  local text="$2"
+  echo "$string" | grep "$text" | sed "s/^$text//"
+}
+
+if [[ "$1" == "" ]]; then
+  echo "Usage: $(project_name) COMMAND ARGS"
+  echo 
+  print_commands_by_folder $(commands_path)
+else
+  print_command_help ${@:1}
+fi

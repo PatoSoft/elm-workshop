@@ -1,0 +1,27 @@
+#!/bin/bash
+# params: [TEST_NAME] [PROJECT]
+# desc: Creates a new test based on a template
+# Creates a new test based on a template, when project is not passed in it creates the test in the 'default' folder (Part1-Language).
+# You can edit the file bin/workshop_/add-test to change the default
+
+test_name=$1
+project=${2:-Part1-Language}
+
+output_file="$project/tests/$test_name.elm"
+
+cat <<END > "$output_file"
+module $test_name exposing (suite)
+{-
+-}
+
+import A_FunctionsBasics exposing (..)
+import Test exposing (..)
+import Expect exposing (..)
+
+suite =
+  test """
+    test definition
+    """ <|
+      \_ -> Expect.equal 30 (A_FunctionsBasics.binomialFunction 5 2)
+END
+

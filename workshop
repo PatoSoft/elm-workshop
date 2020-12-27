@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# set -e: Not recommended in other scripts, but here it avoids execute_command from handling
+# errors from sub-commands and not confuse the error output
+set -e
+
+
+source "${BASH_SOURCE%/*}/bin/lib/commands_helper.sh"
+
+execute_command "${@:1}"

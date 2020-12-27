@@ -1,4 +1,4 @@
-module G_Types exposing (..)
+module H_Types exposing (..)
 
 
 -- Types need to be explained. e.g. boolean
@@ -20,3 +20,5 @@ findSuit suit =
 
 type ValueCard
   = Suit String
+
+-- Pattern matching with types

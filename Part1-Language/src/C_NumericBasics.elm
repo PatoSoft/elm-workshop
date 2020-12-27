@@ -1,4 +1,4 @@
-module NumericBasics exposing (..)
+module C_NumericBasics exposing (..)
 
 wrongInt = 0
 wrongFloat = 0.0
@@ -7,3 +7,4 @@ wrongFloat = 0.0
 -- Float division
 -- conversion functions
 -- Division between int and float
+-- Integer to string
