@@ -1,16 +1,10 @@
 module G_GenericParameters exposing (..)
 
+genericParameterSyntaxExample : (aValue -> Int) -> (anotherValue -> Int) -> aValue -> anotherValue -> Int
+genericParameterSyntaxExample firstFunction secondFunction firstArg secondArg =
+  (firstFunction firstArg) + (secondFunction secondArg)
 
-ternaryOperator : Bool -> a -> a -> a
-ternaryOperator valid valueIfTrue valueIfFalse =
-  valueIfTrue
-
-
-
--- similar to what we did before maybe makes sense
--- apply : (a -> b) -> a -> b -> b
--- apply function valueA valueB =
---   valueB
--- 
-
+{-
+TODO: define a ternary operator function that takes a bool, and 2 (generic) values and returns the first value when the condition is true, otherwise returns the second
+-}
 
