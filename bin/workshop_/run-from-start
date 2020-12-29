@@ -12,6 +12,10 @@ require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 # - Skip the text when an example is passed
 
 pushd ./Part1-Language > /dev/null
+echo "Checking if I need to install something"
+elm install 2>&1 > /dev/null
+echo "Check done!"
+
 for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
   show_step $testFile
