@@ -15,7 +15,7 @@ function wait_to_start {
 function execute_test {
   local file=$1
   local run_once=${2-'false'}
-  local cmd="elm-test $file"
+  local cmd="elm-test $file --color"
   local output=$($cmd 2>&1)
 
   while grep -qie 'TEST RUN FAILED\|Compilation failed' <<< "$output";
