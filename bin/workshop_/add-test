@@ -25,15 +25,15 @@ import Test exposing (..)
 import Expect exposing (..)
 
 suite =
-  describe "stringAndLength"
+  describe "FUNCTION"
   [ test """
-      when hello is passed in returns 5
+      when XXX is passed returns YYY
       """ <|
-        \_ -> Expect.equal ("hello", 5) (stringAndLength "hello")
+        \_ -> Expect.equal YYY (FUNCTION XXX)
   , test """
-      when 'hello world! is passed in returns 12
+      when XXX is passed returns YYY
       """ <|
-        \_ -> Expect.equal ("hello world!", 12) (stringAndLength "hello world!")
+        \_ -> Expect.equal YYY (FUNCTION XXX)
   ]
 END
 
