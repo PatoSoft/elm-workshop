@@ -18,9 +18,9 @@ function show_step {
   execute_test $file
 }
 
-pushd ./Part1-Language
+pushd ./Part1-Language > /dev/null
 for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
   show_step $testFile
 done
-popd
+popd > /dev/null

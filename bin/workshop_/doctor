@@ -1,0 +1,50 @@
+#!/bin/bash
+# params: 
+# desc: Checks if there are module issues and comments defined
+# Checks across all files that the filename matches the module name
+# and that all tests have at least some definition
+
+function check_file_and_module {
+  local file=$1
+  local file_basename=$(basename $file)
+  local module_name=${file_basename%.*}
+
+  grep "module $module_name" "$file" > /dev/null
+  local result=$?
+
+  if [ $result -ne 0 ]; then
+    echo "File: $file module: $module_name Does not have a matching module name"
+  fi
+}
+
+function check_initial_comment {
+  local file=$1
+
+  head -n 2 $file | grep "{-" > /dev/null
+  local result=$?
+
+  if [ $result -ne 0 ]; then
+    echo "File: $file Does not have a description comment in the second line"
+  fi
+}
+
+pushd ./Part1-Language > /dev/null
+
+echo "Checking files in src for non-matching module names"
+for file in $(find 'src' -iname '*.elm')
+do
+  check_file_and_module "$file"
+done
+
+echo "Checking files in test for non-matching module names"
+for file in $(find 'tests' -iname '*.elm')
+do
+  check_file_and_module "$file"
+done
+
+echo "Checking files in test for initial comment"
+for file in $(find 'tests' -iname '*.elm')
+do
+  check_initial_comment "$file"
+done
+popd > /dev/null

@@ -35,6 +35,15 @@ working together for those examples to work.
 - Order matters, each 'lesson' focuses on a topic and it can re-introduce concepts from 
   earlier parts of the course, so spaced repetition is reinforced
 
+## Check if example and tests are going to run correctly
+
+You can use 
+
+```
+./workshop doctor
+```
+To detect typos in the module names, missing documentation for the steps and so on
+
 ## Tools
 
 The `workshop` command is a bash script built using a bash command library built for carwow
