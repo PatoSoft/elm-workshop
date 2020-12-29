@@ -13,9 +13,15 @@ module H_Types exposing (..)
 type Suit
   = Hearts
 
-findSuit : Suit -> String
-findSuit suit =
+
+stringToSuit : String -> Suit
+stringToSuit string =
+  Hearts
+
+suitToString : Suit -> String
+suitToString suit =
   ""
+
 
 
 type ValueCard
