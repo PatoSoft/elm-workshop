@@ -21,7 +21,7 @@ binomialFunction x y =
 
 -- Currying: you can use the function you declared before and re-use it here
 sum2 changeMeIfYouWant =
-  sum changeMeIfYouWant 2
+  wrongValue
 
 
 -- TODO find a nice example for parameter argument types

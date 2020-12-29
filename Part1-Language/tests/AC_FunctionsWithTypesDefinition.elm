@@ -1,4 +1,4 @@
-module AB_FunctionsWithTypeDefinition exposing (suite)
+module AC_FunctionsWithTypesDefinition exposing (suite)
 {-
 So far we looked at functions that elm automatically define, via static
 analysis the type of input it expects.
