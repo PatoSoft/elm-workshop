@@ -35,4 +35,13 @@ readSecondValueFunctionArguments : (String, Int) -> Int
 readSecondValueFunctionArguments tuple =
   0
 
--- fizzbuzz
+{-
+TODO: We want to re-implement fizzBuzz by using pattern matching and case statement
+as a reminder:
+fizzbuz takes an integer and returns a string
+- if the integer can be divided by 3 returns "Fizz"
+- if the integer can be divided by 5 returns "Buzz"
+- if the integer can be divided by both 3 and 5 returns "FizzBuzz"
+- otherwise returns the number
+-}
+
