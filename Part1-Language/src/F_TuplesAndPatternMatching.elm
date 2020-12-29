@@ -23,4 +23,16 @@ readSecondValue tuple =
 
 -- Pattern matching
 
+readSecondValueAssignment : (String, Int) -> Int
+readSecondValueAssignment tuple =
+  let
+      (_, _) = tuple
+  in
+      0
+
+
+readSecondValueFunctionArguments : (String, Int) -> Int
+readSecondValueFunctionArguments tuple =
+  0
+
 -- fizzbuzz
