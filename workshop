@@ -9,7 +9,7 @@ source "${BASH_SOURCE%/*}/bin/lib/commands_helper.sh"
 
 if [ -z "$1" ] 
 then
-  execute_command 'run'
+  execute_command 'run-from-start'
 else
   execute_command "${@:1}"
 fi

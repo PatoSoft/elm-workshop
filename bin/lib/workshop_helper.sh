@@ -2,7 +2,8 @@
 
 function show_explanation {
   local file=$1
-  sed '/^-}/q' "$file" | sed  '2d;$d'
+  sed '/^-}/q' "$file" | sed '1d;2d;$d'
+
   echo "-----------------------"
 }
 
@@ -63,4 +64,12 @@ function execute_test {
       output=""
     fi
   done
+}
+
+function show_step {
+  local file=$1
+
+  show_explanation $file
+  wait_to_start
+  execute_test $file
 }

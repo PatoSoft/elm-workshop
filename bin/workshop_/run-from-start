@@ -1,0 +1,19 @@
+#!/bin/bash
+
+require 'dependency_helper.sh'
+require 'workshop_helper.sh'
+
+require_cmd 'npm' 'https://nodejs.org/en/'
+require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
+require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
+
+# TODO: Fix the flow for people returning to the project:
+# - Show the overall progress
+# - Skip the text when an example is passed
+
+pushd ./Part1-Language > /dev/null
+for testFile in $(find 'tests' -iname '*.elm' | sort)
+do
+  show_step $testFile
+done
+popd > /dev/null
