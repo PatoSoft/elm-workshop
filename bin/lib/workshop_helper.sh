@@ -52,9 +52,9 @@ function execute_test {
   local cmd="fake_tty elm-test $file"
   local output=$($cmd 2>&1)
 
-  while grep -qie 'TEST RUN FAILED\|Compilation failed' <<< "$output";
+  while grep -qiE 'TEST RUN FAILED|Compilation failed' <<< "$output";
   do
-    echo -E "$output"
+    echo "$output"
 
     if [ "$run_once" == "false" ]
     then
