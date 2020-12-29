@@ -1,7 +1,14 @@
 module C_NumericBasics exposing (..)
 
-wrongInt = 0
-wrongFloat = 0.0
+
+wrongInt =
+    0
+
+
+wrongFloat =
+    0.0
+
+
 
 -- integer division
 -- Float division

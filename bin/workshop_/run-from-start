@@ -13,7 +13,7 @@ require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 
 pushd ./Part1-Language > /dev/null
 echo "Checking if I need to install something"
-elm install 2>&1 > /dev/null
+elm make > /dev/null 2>&1
 echo "Check done!"
 
 for testFile in $(find 'tests' -iname '*.elm' | sort)

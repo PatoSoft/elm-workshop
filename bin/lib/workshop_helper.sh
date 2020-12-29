@@ -2,7 +2,7 @@
 
 function show_explanation {
   local file=$1
-  sed '/^-}/q' "$file" | sed '1d;2d;$d' | more
+  sed '/^-}/q' "$file" | sed '1d;2d;3d;$d' | sed -e 's/^  //' | more
 
   echo "-----------------------"
 }

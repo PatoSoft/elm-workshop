@@ -20,11 +20,11 @@ function check_file_and_module {
 function check_initial_comment {
   local file=$1
 
-  head -n 2 $file | grep "{-" > /dev/null
+  head -n 3 $file | tail -n 1 | grep "{-" > /dev/null
   local result=$?
 
   if [ $result -ne 0 ]; then
-    echo "File: $file Does not have a description comment in the second line"
+    echo "File: $file Does not have a description comment in the third line"
   fi
 }
 
