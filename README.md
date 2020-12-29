@@ -1,11 +1,18 @@
 # Running it 
 
-## Set up
+## Steps to run the workshop
 
-The application requires 
-npm: https://nodejs.org/en/
-elm: https://guide.elm-lang.org/install/elm.html
-fswatch: https://emcrisostomo.github.io/fswatch/getting.html
+- Help with the installation
+- Open elm repl to show the syntax to declare a `sum` function in elm
+- Ask the people to run ./workshop to go through the examples
+- After each example gather their insights and provide more explanation if needed
+
+## Installation
+
+The application requires:
+- npm: https://nodejs.org/en/
+- elm: https://guide.elm-lang.org/install/elm.html
+- fswatch: https://emcrisostomo.github.io/fswatch/getting.html
 
 Fswatch can be installed on mac with either macports or brew,
 if you don't have either follow the instructions on the page linked above
@@ -17,19 +24,14 @@ Once everything is set up run the workshop by running
 ```
 from the top folder
 
-## Steps to run the workshop
-
-- Help with the installation
-- Open elm repl to show the syntax to declare a `sum` function in elm
-- Ask the people to run ./workshop to go through the examples
-- After each example gather their insights and provide more explanation if needed
-
 # Maintaining it
 
 The idea behind the workshop is to build the knowledge of the language
 from the bottom up. 
+
 In this way it's easier to introduce language features and build more complex
 concepts from a strong foundation.
+
 Another approach that I saw being used in this sort of workshops is to build
 the knowledge starting from an application. While that approach has
 its own benefits (e.g. dopamine response for each step solved) it has
@@ -51,6 +53,7 @@ You can use
 ```
 ./workshop doctor
 ```
+
 To detect typos in the module names, missing documentation for the steps and so on
 
 ## Tools
