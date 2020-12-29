@@ -1,5 +1,7 @@
 # Running it 
 
+## Set up
+
 The application requires 
 npm: https://nodejs.org/en/
 elm: https://guide.elm-lang.org/install/elm.html
@@ -14,6 +16,13 @@ Once everything is set up run the workshop by running
 ./workshop 
 ```
 from the top folder
+
+## Steps to run the workshop
+
+- Help with the installation
+- Open elm repl to show the syntax to declare a `sum` function in elm
+- Ask the people to run ./workshop to go through the examples
+- After each example gather their insights and provide more explanation if needed
 
 # Maintaining it
 

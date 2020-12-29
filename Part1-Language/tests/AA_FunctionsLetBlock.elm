@@ -23,6 +23,10 @@ note that the function above could have been written like:
 ```
 
 But it's often the case you want to declare 'variables' for readability purposes.
+
+implement the binomialFunction 3x + 6Y + 3
+in the file
+FunctionBasics.elm 
 -}
 
 import A_FunctionsBasics exposing (..)
@@ -31,8 +35,6 @@ import Expect exposing (..)
 
 suite =
   test """
-    implement the binomialFunction 3x + 6Y + 3
-    in the file
-    FunctionBasics.elm 
+    binomialFunction returns the expected value
     """ <|
       \_ -> Expect.equal 30 (A_FunctionsBasics.binomialFunction 5 2)
