@@ -2,7 +2,7 @@
 
 function show_explanation {
   local file=$1
-  sed '/^-}/q' "$file" | sed '1d;2d;$d'
+  sed '/^-}/q' "$file" | sed '1d;2d;$d' | more
 
   echo "-----------------------"
 }
@@ -13,14 +13,14 @@ function wait_to_start {
   read 
 }
 
-faketty () {
+fake_tty () {
   # copied from https://stackoverflow.com/a/57381061
   tmp=$(mktemp)
 
   # Ensure it worked or fail with status 99
   [ "$tmp" ] || return 99
 
-  # Produce a script that runs the command provided to faketty as
+  # Produce a script that runs the command provided to fake_tty as
   # arguments and stores the status code in the temporary file
   cmd="$(printf '%q ' "$@")"'; echo $? > '$tmp
 
@@ -49,7 +49,7 @@ faketty () {
 function execute_test {
   local file=$1
   local run_once=${2-'false'}
-  local cmd="faketty elm-test $file"
+  local cmd="fake_tty elm-test $file"
   local output=$($cmd 2>&1)
 
   while grep -qie 'TEST RUN FAILED\|Compilation failed' <<< "$output";

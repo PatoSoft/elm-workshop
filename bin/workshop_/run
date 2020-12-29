@@ -5,5 +5,5 @@
 require 'workshop_helper.sh'
 
 pushd ./Part1-Language > /dev/null
-show_step tests/$1
+show_step tests/$1.elm
 popd > /dev/null
