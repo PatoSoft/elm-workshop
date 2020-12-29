@@ -4,24 +4,36 @@
 # Creates a new test based on a template, when project is not passed in it creates the test in the 'default' folder (Part1-Language).
 # You can edit the file bin/workshop_/add-test to change the default
 
+set -e
 test_name=$1
 project=${2:-Part1-Language}
 
 output_file="$project/tests/$test_name.elm"
+
+# Look for the target file based on the first char in the test
+first_char=${test_name:0:1}
+target_file=$(find "$project/src/" -iname "${first_char}_*")
+target_module_name=$(basename ${target_file%.*})
 
 cat <<END > "$output_file"
 module $test_name exposing (suite)
 {-
 -}
 
-import A_FunctionsBasics exposing (..)
+import $target_module_name exposing (..)
 import Test exposing (..)
 import Expect exposing (..)
 
 suite =
-  test """
-    test definition
-    """ <|
-      \_ -> Expect.equal 30 (A_FunctionsBasics.binomialFunction 5 2)
+  describe "stringAndLength"
+  [ test """
+      when hello is passed in returns 5
+      """ <|
+        \_ -> Expect.equal ("hello", 5) (stringAndLength "hello")
+  , test """
+      when 'hello world! is passed in returns 12
+      """ <|
+        \_ -> Expect.equal ("hello world!", 12) (stringAndLength "hello world!")
+  ]
 END
 
