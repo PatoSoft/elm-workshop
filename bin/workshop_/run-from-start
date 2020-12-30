@@ -7,9 +7,12 @@ require_cmd 'npm' 'https://nodejs.org/en/'
 require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
 require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 
+
 # TODO: Fix the flow for people returning to the project:
 # - Show the overall progress
 # - Skip the text when an example is passed
+# - Require elm-test
+# - check version
 
 pushd ./Part1-Language > /dev/null
 echo "Checking if I need to install something"

@@ -6,7 +6,6 @@ module AA_FunctionsLetBlock exposing (suite)
 
    The syntax looks like this
 
-   ```
      myFunction x y z =
        let
            x_plus_y = x + y
@@ -14,14 +13,11 @@ module AA_FunctionsLetBlock exposing (suite)
            z_squared = z ^ 2
        in
            x_plus_y + z_squared
-   ```
 
    note that the function above could have been written like:
 
-   ```
      myFunction x y z =
        x + y + z ^ 2
-   ```
 
    But it's often the case you want to declare 'variables' for readability purposes.
 
