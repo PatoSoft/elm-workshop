@@ -1,14 +1,15 @@
 module I_Maybes exposing (..)
 
 
-ternaryOperator : Bool -> a -> a -> a
-ternaryOperator valid valueIfTrue valueIfFalse =
-    valueIfTrue
+defaultStringToInt : String -> Maybe Int
+defaultStringToInt string =
+    String.toInt string
 
 
 
--- similar to what we did before maybe makes sense
--- apply : (a -> b) -> a -> b -> b
--- apply function valueA valueB =
---   valueB
---
+{-
+   TODO: Exercise 1:
+     Implement a parseStringToIntOrZero function that given a string:
+       If the string can be parsed returns the number
+       otherwise returns 0
+-}

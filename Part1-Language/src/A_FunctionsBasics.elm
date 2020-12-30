@@ -5,17 +5,8 @@ wrongValue =
     0
 
 
-
--- This should be explained using the repl and how to call it
-
-
 sum a b =
     a + b
-
-
-
--- Functions always return a single value, you can define temporary values in a let block
--- implement the function 3x + 6Y + 3
 
 
 binomialFunction x y =
