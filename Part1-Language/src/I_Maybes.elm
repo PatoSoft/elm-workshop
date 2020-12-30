@@ -9,7 +9,12 @@ defaultStringToInt string =
 
 {-
    TODO: Exercise 1:
-     Implement a parseStringToIntOrZero function that given a string:
-       If the string can be parsed returns the number
-       otherwise returns 0
+   Implement a parseStringToIntOrZero function that given a string:
+     If the string can be parsed returns the number
+     otherwise returns 0
+   Implement it using the function maybeWithDefault:
+   https://package.elm-lang.org/packages/elm/core/latest/Maybe#withDefault
+-}
+{-
+   TODO: Exercise 2:
 -}

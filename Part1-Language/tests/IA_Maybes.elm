@@ -32,7 +32,9 @@ module IA_Maybes exposing (suite)
 
    But the core library also has 3 main functions (withDefault, map, andThen) to handle maybes.
 
-   Let's have a look at withDefault first
+   Let's have a look at withDefault first.
+   Implement a function called parseStringToIntOrZero that uses Maybe.withDefault
+   in the file src/I_Maybes.elm
 
 -}
 
