@@ -32,4 +32,4 @@ suite =
     test """
   passing 2 returns True
   """ <|
-        \_ -> Expect.equal 7 (A_FunctionsBasics.isEven 2)
+        \_ -> Expect.equal True (A_FunctionsBasics.isEven 2)
