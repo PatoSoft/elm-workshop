@@ -47,4 +47,7 @@ for file in $(find 'tests' -iname '*.elm')
 do
   check_initial_comment "$file"
 done
+
+yes | elm-format src
+yes | elm-format tests
 popd > /dev/null
