@@ -3,22 +3,20 @@
 require 'dependency_helper.sh'
 require 'workshop_helper.sh'
 
-require_cmd 'npm' 'https://nodejs.org/en/'
-require_cmd 'elm' 'https://guide.elm-lang.org/install/elm.html'
-require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
+echo "Checking if we need to install something"
+require_cmd 'npm' 'Please install it from here:' 'https://nodejs.org/en/'
+require_cmd 'elm' 'Please install it from here:' 'https://guide.elm-lang.org/install/elm.html'
+require_cmd 'fswatch' 'Please install it from here:' 'https://emcrisostomo.github.io/fswatch/getting.html'
+require_cmd 'elm-test' 'Please install it by running:' '> npm install -g elm-test'
 
+elm make > /dev/null 2>&1
+echo "Check done!"
 
 # TODO: Fix the flow for people returning to the project:
-# - Show the overall progress
-# - Skip the text when an example is passed
-# - Require elm-test
 # - check version
 
 pushd ./Part1-Language > /dev/null
 
-echo "Checking if I need to install something"
-elm make > /dev/null 2>&1
-echo "Check done!"
 
 total_exercises=$(find 'tests' -iname '*.elm' | wc -l)
 
