@@ -7,6 +7,15 @@ module H_Types exposing (..)
 -- or comparison
 --
 -- Suit
+{-
+   TODO: Exercise 1, Implement this
+   We have stringToSuit and suitToString to implement
+   We want to implement them for all suits:
+   Hearts
+   Clubs
+   Spades
+   Diamonds
+-}
 
 
 type Suit
@@ -68,6 +77,7 @@ remoteLoad state data =
 
 
 {-
+   TODO: Exercise 2, Implement this
    This function will return the following:
    When the state is:  |          Will return:
    -------------------------------------------------------
