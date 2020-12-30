@@ -15,6 +15,7 @@ module HA_TypesCardSuit exposing (suite)
        | No
        | Either
 
+   In this case the YesAndNo type has 2 variants.
    You can then create functions to 'translate' input strings in the type you need and back
 
      yesAndNoFromString : String -> YesAndNo
