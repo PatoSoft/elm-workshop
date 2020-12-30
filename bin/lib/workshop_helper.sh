@@ -16,14 +16,10 @@ function wait_to_start {
 
 fake_tty () {
   # copied from https://stackoverflow.com/a/57381061
-  tmp=$(mktemp)
-
-  # Ensure it worked or fail with status 99
-  [ "$tmp" ] || return 99
 
   # Produce a script that runs the command provided to fake_tty as
-  # arguments and stores the status code in the temporary file
-  cmd="$(printf '%q ' "$@")"'; echo $? > '$tmp
+  # arguments 
+  cmd="$(printf '%q ' "$@")"
 
   # Run the script through /bin/sh with fake tty
   if [ "$(uname)" = "Darwin" ]; then
@@ -32,19 +28,6 @@ fake_tty () {
   else
     script -qfc "/bin/sh -c $(printf "%q " "$cmd")" /dev/null
   fi
-
-  # Ensure that the status code was written to the temporary file or
-  # fail with status 99
-  [ -s $tmp ] || return 99
-
-  # Collect the status code from the temporary file
-  err=$(cat $tmp)
-
-  # Remove the temporary file
-  rm -f $tmp
-
-  # Return the status code
-  return $err
 }
 
 function execute_test {
