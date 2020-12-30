@@ -8,7 +8,8 @@ function progress_bar() {
 
   echo ''
 
-  function print_progress_bar() {
+  function progress_bar_increase() {
+    _progress_bar_current=$(($_progress_bar_current + 1))
     local percentage=$((100 * $_progress_bar_current/$_progress_bar_total))
     local progress_col=$(($percentage * $_progress_bar_width / 100))
 
@@ -22,10 +23,5 @@ function progress_bar() {
       printf '| %s%%' $percentage
       echo 
     fi
-  }
-
-  function progress_bar_increase() {
-    _progress_bar_current=$(($_progress_bar_current + 1))
-    print_progress_bar
   }
 }

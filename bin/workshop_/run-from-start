@@ -15,12 +15,15 @@ require_cmd 'fswatch' 'https://emcrisostomo.github.io/fswatch/getting.html'
 # - check version
 
 pushd ./Part1-Language > /dev/null
+
 echo "Checking if I need to install something"
 elm make > /dev/null 2>&1
 echo "Check done!"
 
+total_exercises=$(find 'tests' -iname '*.elm' | wc -l)
+
 for testFile in $(find 'tests' -iname '*.elm' | sort)
 do
-  show_step $testFile
+  show_step $testFile $total_exercises
 done
 popd > /dev/null

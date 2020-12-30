@@ -1,15 +1,16 @@
 #!/bin/bash
+require 'progress_bar.sh'
 
 function show_explanation {
   local file=$1
-  sed '/^-}/q' "$file" | sed '1d;2d;3d;$d' | sed -e 's/^   //' 
+  sed '/^-}/q' "$file" | sed '1d;2d;3d;$d' | sed -e 's/^   //'
 
   echo "-----------------------"
 }
 
 function wait_to_start {
   echo ""
-  echo "Press enter to start"
+  echo "Press enter to continue"
   read 
 }
 
@@ -62,14 +63,41 @@ function execute_test {
       output=$($cmd 2>&1)
     else
       output=""
+      return 1
     fi
   done
+
+  return 0
+}
+
+function progress_bar_initialised {
+  LC_ALL=C type progress_bar_increase  > /dev/null 2>&1
+  return $?
 }
 
 function show_step {
   local file=$1
+  local total_exercises=${2:-"0"}
 
-  show_explanation $file
-  wait_to_start
-  execute_test $file
+  execute_test $file 'true' > /dev/null
+  local result=$?
+
+
+  if [ "$total_exercises" -ne "0" ]; then
+    clear
+    echo "Progress so far:"
+    progress_bar_initialised || progress_bar $total_exercises
+
+    progress_bar_increase
+
+    echo
+    echo
+  fi
+
+  if [ $result -ne 0 ]; then
+    show_explanation $file
+
+    wait_to_start
+    execute_test $file
+  fi
 }
