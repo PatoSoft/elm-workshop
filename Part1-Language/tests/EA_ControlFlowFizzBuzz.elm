@@ -15,9 +15,9 @@ module EA_ControlFlowFizzBuzz exposing (suite)
        [statement]
 
    for this exercise remember that you can calculate the modulo operation
-   using %
+   using modBy
    e.g.
-     number % 5 == 0
+     modBy 5 number == 0
    Only when the number can be divided by 5 without any rest for the division
 
    Also feel free to use
