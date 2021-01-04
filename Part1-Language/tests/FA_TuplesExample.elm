@@ -18,6 +18,7 @@ module FA_TuplesExample exposing (suite)
    https://package.elm-lang.org/packages/elm/core/latest/Tuple
 
    Please implement stringAndLength to return the length of a string passed in as a parameter
+   In the file src/F_TuplesAndPatternMatching.elm
 -}
 
 import Expect exposing (..)

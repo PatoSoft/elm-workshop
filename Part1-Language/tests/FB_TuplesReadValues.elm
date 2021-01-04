@@ -7,6 +7,8 @@ module FB_TuplesReadValues exposing (suite)
    implement the functions:
    - readFirstValue
    - readSecondValue
+
+   In the file src/F_TuplesAndPatternMatching.elm
 -}
 
 import Expect exposing (..)

@@ -30,6 +30,7 @@ module EB_ControlFlowTernaryOperator exposing (suite)
    That is because elm uses 'pattern matching' to match the different options it has.
    In other words, the first example works because elm tries to match exactly the value for
    dayInNumber with the different options provided in the code.
+   Implement the ternaryOperator function in the file src/E_ControlFlow.elm
 -}
 
 import E_ControlFlow exposing (..)

@@ -2,7 +2,7 @@ module BC_StringAppend exposing (suite)
 
 {-
    Another function that instead can be used is append.
-   implement hello2 in the StringBasics file
+   implement hello2 in the src/B_StringBasics.elm file
 -}
 
 import B_StringBasics exposing (..)

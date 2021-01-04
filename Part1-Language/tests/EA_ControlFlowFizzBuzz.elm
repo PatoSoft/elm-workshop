@@ -23,6 +23,7 @@ module EA_ControlFlowFizzBuzz exposing (suite)
    Also feel free to use
      Int.toString number
    to show the string representation for the number
+   Implement the fizzbuzz function in the file src/E_ControlFlow.elm
 -}
 
 import E_ControlFlow exposing (..)

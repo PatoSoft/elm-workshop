@@ -50,7 +50,7 @@ module FC_TuplesPatternMatching exposing (suite)
        in
          firstValue
 
-   Implement readSecondValueAssignment in the F_TuplesAndPatternMatching file
+   Implement readSecondValueAssignment in the src/F_TuplesAndPatternMatching.elm file
 -}
 
 import Expect exposing (..)

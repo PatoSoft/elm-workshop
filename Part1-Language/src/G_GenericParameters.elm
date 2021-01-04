@@ -8,5 +8,15 @@ genericParameterSyntaxExample firstFunction secondFunction firstArg secondArg =
 
 
 {-
-   TODO: define a ternary operator function that takes a bool, and 2 (generic) values and returns the first value when the condition is true, otherwise returns the second
+   TODO: Exercise 1
+   Define a ternary operator function that takes a bool,
+   and 2 (generic) values and returns the first value when
+   the condition is true, otherwise returns the second
+   The sintax is like a normal function with types definition
+   but the 'generic' values are lowercase
+
+   myFunction : (aValue -> Int) -> aValue -> Int
+   myFunction callback value = ...
+
+   the function is called ternaryOperator
 -}

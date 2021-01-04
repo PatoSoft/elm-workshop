@@ -4,6 +4,8 @@ module BD_StringAppendLetReminder exposing (suite)
    Implement hello3, it does basically the same thing as hello2 but try to remember what
    - let does
    - hello is
+
+   Implement hello3 in the file src/B_StringBasics.elm
 -}
 
 import B_StringBasics exposing (..)

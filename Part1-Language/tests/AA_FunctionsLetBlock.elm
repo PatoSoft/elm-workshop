@@ -21,9 +21,7 @@ module AA_FunctionsLetBlock exposing (suite)
 
    But it's often the case you want to declare 'variables' for readability purposes.
 
-   implement the binomialFunction 3x + 6Y + 3
-   in the file
-   FunctionBasics.elm
+   implement the binomialFunction 3x + 6Y + 3 in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)

@@ -11,6 +11,8 @@ module BA_StringLength exposing (suite)
    The first time I went through the documentation I had a hard time
    to understand what was written in there. This set of exercise will
    focus on understanding how to use the documentation to create our code.
+
+   Implement the 'lengthOfString' function in src/B_StringBasics.elm
 -}
 
 import B_StringBasics exposing (..)

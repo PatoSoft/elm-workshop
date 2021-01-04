@@ -41,6 +41,7 @@ module AB_FunctionsSumWithCurrying exposing (suite)
 
    elm will execute the function when the other two arguments are passed in
 
+   Implement sum2 in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)

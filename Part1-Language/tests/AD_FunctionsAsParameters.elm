@@ -17,6 +17,7 @@ module AD_FunctionsAsParameters exposing (suite)
        integer and returns an integer
      - the second parameter is an integer
      - the apply function returns and integer
+   Implement apply in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)

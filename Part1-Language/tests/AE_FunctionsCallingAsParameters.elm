@@ -30,6 +30,8 @@ module AE_FunctionsCallingAsParameters exposing (suite)
    - (sum 3) uses 'currying' against the sum function, sum takes 2 Int and returns and Int
      in this case we pass only one argument, so the 'remaining' function will take 1 Int and
      return 1 Int
+
+   Implement applySum3 in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)

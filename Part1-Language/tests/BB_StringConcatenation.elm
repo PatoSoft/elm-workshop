@@ -4,7 +4,7 @@ module BB_StringConcatenation exposing (suite)
    One of the most common operation over strings is the string concatenation.
    To concatenate strings you can use the ++ operator
 
-   Implement it in the 'hello1' function in StringBasics.elm
+   Implement it in the 'hello1' function in src/B_StringBasics.elm
 -}
 
 import B_StringBasics exposing (..)

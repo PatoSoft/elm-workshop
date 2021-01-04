@@ -23,7 +23,7 @@ module GA_GenericTernaryOperator exposing (suite)
      myOtherFunction : (aValue -> Int) -> (anotherValue -> int) -> aValue -> anotherValue -> Int
 
    Now let's try to re-define the ternary operator to accept any types as a parameter, open the file:
-   G_GenericParameters.elm to implement it
+   src/G_GenericParameters.elm to implement it
 -}
 
 import Expect exposing (..)

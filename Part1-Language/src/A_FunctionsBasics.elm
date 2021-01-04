@@ -25,7 +25,7 @@ binomialFunction x y =
         yPart =
             0
     in
-    wrongValue
+    3 * x + 6 * y + 3
 
 
 

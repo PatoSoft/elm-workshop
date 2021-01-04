@@ -34,7 +34,7 @@ module HA_TypesCardSuit exposing (suite)
 
    As you can notice you can also use the value types declared like that in a case condition
 
-   Let's implement the basic card suits in the H_Types.elm file and the relative conversion functions
+   Let's implement the basic card suits in the src/H_Types.elm file and the relative conversion functions
 -}
 
 import Expect exposing (..)

@@ -18,6 +18,7 @@ target_module_name=$(basename ${target_file%.*})
 cat <<END > "$output_file"
 module $test_name exposing (suite)
 {-
+   Open src/$target_file and implement FUNCTION
 -}
 
 import $target_module_name exposing (..)

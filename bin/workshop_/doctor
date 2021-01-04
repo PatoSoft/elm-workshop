@@ -28,6 +28,19 @@ function check_initial_comment {
   fi
 }
 
+function ensure_initial_comment_tells_which_file_to_edit {
+  local file=$1
+
+  local comment=$(sed '/^-}/q' "$file" | sed '1d;2d;3d;$d' | sed -e 's/^   //')
+
+  local first_char=${file:0:1}
+  local target_file=$(find "src/" -iname "${first_char}_*")
+
+  if [[ ! $comment =~ "src/$target_file" ]]; then
+    echo "File: $file Does not tell which file to open"
+  fi
+}
+
 pushd ./Part1-Language > /dev/null
 
 echo "Checking files in src for non-matching module names"
@@ -48,6 +61,13 @@ do
   check_initial_comment "$file"
 done
 
-yes | elm-format src
-yes | elm-format tests
+echo "Checking if in the initial comment we say which file to open"
+for file in $(find 'tests' -iname '*.elm')
+do
+  ensure_initial_comment_tells_which_file_to_edit "$file"
+done
+
+echo "Running elm-format"
+yes | elm-format src > /dev/null
+yes | elm-format tests > /dev/null
 popd > /dev/null

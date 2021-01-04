@@ -21,6 +21,7 @@ module AC_FunctionsWithTypesDefinition exposing (suite)
    String, Int, Float, Bool, Numeric
 
    and some more complex types that we will look at later.
+   Implement isEven in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)

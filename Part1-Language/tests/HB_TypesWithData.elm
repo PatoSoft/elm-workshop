@@ -43,6 +43,7 @@ module HB_TypesWithData exposing (suite)
     One instance where this is often used is for error handling and state management. With the power of the compiler this allows to ensure states are handled correctly through complex applications.
 
     Let's try to implement a functions that prints the state of our remote loading profile code
+    Open the file src/H_Types.elm
 
 -}
 

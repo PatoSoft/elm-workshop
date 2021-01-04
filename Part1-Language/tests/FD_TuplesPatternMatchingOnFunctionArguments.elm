@@ -8,7 +8,7 @@ module FD_TuplesPatternMatchingOnFunctionArguments exposing (suite)
        sqrt ( toFloat (x ^ 2 + y ^ 2) )
 
 
-   Implement readSecondValueFunctionArguments in the file F_TuplesAndPatternMatching
+   Implement readSecondValueFunctionArguments in the file src/F_TuplesAndPatternMatching.elm
 -}
 
 import Expect exposing (..)

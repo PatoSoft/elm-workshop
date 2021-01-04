@@ -7,6 +7,8 @@ module BE_StringRemoveTextFromString exposing (suite)
    Have a look at the documentation to see what we can use
 
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Implement removeTextFromString in the file src/B_StringBasics.elm
 -}
 
 import B_StringBasics exposing (..)

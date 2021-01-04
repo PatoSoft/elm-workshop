@@ -41,6 +41,7 @@ module FE_TuplesPatternMatchingOnCase exposing (suite)
 
    Let's now try to re-implement the fizzBuzz function using pattern matching with the case statement
    This time you need to implement it starting from the function definition
+   Open the file src/F_TuplesAndPatternMatching.elm
 -}
 
 import Expect exposing (..)
