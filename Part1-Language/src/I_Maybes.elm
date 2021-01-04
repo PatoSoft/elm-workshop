@@ -17,4 +17,6 @@ defaultStringToInt string =
 -}
 {-
    TODO: Exercise 2:
+   Implement maybeSum, it is a function that takes 2 maybe ints and returns
+   a string representing the sum or an empty string if either value is Nothing
 -}
