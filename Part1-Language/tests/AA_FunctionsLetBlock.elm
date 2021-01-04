@@ -8,11 +8,11 @@ module AA_FunctionsLetBlock exposing (suite)
 
      myFunction x y z =
        let
-           x_plus_y = x + y
+           xPlusY = x + y
 
-           z_squared = z ^ 2
+           zSquared = z ^ 2
        in
-           x_plus_y + z_squared
+           xPlusY + zSquared
 
    note that the function above could have been written like:
 
