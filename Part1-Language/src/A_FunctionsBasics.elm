@@ -25,7 +25,7 @@ binomialFunction x y =
         yPart =
             0
     in
-    3 * x + 6 * y + 3
+    wrongValue
 
 
 
@@ -36,7 +36,7 @@ binomialFunction x y =
 
 
 add2 changeMeIfYouWant =
-    sum 2 changeMeIfYouWant
+    wrongValue
 
 
 
