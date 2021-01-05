@@ -15,6 +15,7 @@ module H_Types exposing (..)
    Clubs
    Spades
    Diamonds
+   In case we receive a random string we want to return Diamonds
 -}
 
 

@@ -51,7 +51,7 @@ suite =
         , test """
       when "Clubs" is passed returns Clubs
       """ <|
-            \_ -> Expect.equal "Clubs" (suitToString (stringToSuit "Hearts"))
+            \_ -> Expect.equal "Clubs" (suitToString (stringToSuit "Clubs"))
         , test """
       when "Spades" is passed returns Spades
       """ <|

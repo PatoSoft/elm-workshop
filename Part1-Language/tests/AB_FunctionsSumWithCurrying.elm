@@ -41,7 +41,7 @@ module AB_FunctionsSumWithCurrying exposing (suite)
 
    elm will execute the function when the other two arguments are passed in
 
-   Implement sum2 in the file src/A_FunctionsBasics.elm
+   Implement add2 in the file src/A_FunctionsBasics.elm
 -}
 
 import A_FunctionsBasics exposing (..)
@@ -53,4 +53,4 @@ suite =
     test """
   passing 5 it returns 7
   """ <|
-        \_ -> Expect.equal 7 (sum2 5)
+        \_ -> Expect.equal 7 (add2 5)

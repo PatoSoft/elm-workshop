@@ -2,10 +2,21 @@
 
 ## Steps to run the workshop
 
+- Explain why we are using elm (section below)
 - Help with the installation
 - Open elm repl to show the syntax to declare a `sum` function in elm
 - Ask the people to run ./workshop to go through the examples
 - After each example gather their insights and provide more explanation if needed
+
+
+## Why we are using elm
+Introduction and why is important:
+
+- Functional programming languages and the rest of the world (where they are used, why and the benefits)
+- Being a developer and using patterns from other languages (example of vectorisation in ML)
+- We selected it for carwow for reasons explained in the 'Engineering Language choiche' notion document
+
+(maybe show a code snippet initially to engage interest and see what they will be able to 'parse' after the workshop) - perhaps 2 code snippets one for the language and one for the 'application' part
 
 ## Installation
 

@@ -31,12 +31,12 @@ binomialFunction x y =
 
 {-
    TODO: Exercise 2:
-   Implement the sum2 function that acts like sum but just adds 2 to the number
+   Implement the add2 function that acts like sum but just adds 2 to the number
 -}
 
 
-sum2 changeMeIfYouWant =
-    wrongValue
+add2 changeMeIfYouWant =
+    sum 2 changeMeIfYouWant
 
 
 
