@@ -1,4 +1,4 @@
-module IB_MaybeSum exposing (suite)
+module IC_MaybeSum exposing (suite)
 
 {-
    Now let's assume we are getting from an api 2 numbers that can be null.
