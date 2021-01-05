@@ -1,4 +1,4 @@
-module C_NumericBasics exposing (..)
+module C_NumericBasics exposing (multiply, pagesCount, wrongFloat, wrongInt)
 
 
 wrongInt =
@@ -10,8 +10,25 @@ wrongFloat =
 
 
 
--- integer division
--- Float division
--- conversion functions
--- Division between int and float
--- Integer to string
+{-
+   TODO: Excercise 1
+   Implement multiply function
+   https://package.elm-lang.org/packages/elm/core/latest/Basics
+-}
+
+
+multiply : Int -> Float -> Float
+multiply n value =
+    wrongInt
+
+
+
+{-
+   TODO: Excercise 2
+   Implement pagesCount function
+-}
+
+
+pagesCount : Int -> Int -> Int
+pagesCount perPage resultsCount =
+    wrongInt
