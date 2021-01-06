@@ -16,3 +16,18 @@ module J_Record exposing (..)
 
 person =
     {}
+
+
+
+{-
+   TODO: Exercise 2
+
+   Implement readMaybeNickname that reads the nickname from a Maybe record containing the field nickname
+   When there is no record the function should return an empty string
+
+-}
+
+
+readMaybeNickname : Maybe { name : String, nickname : String } -> String
+readMaybeNickname value =
+    ""
