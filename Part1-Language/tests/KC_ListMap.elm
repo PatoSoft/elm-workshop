@@ -11,20 +11,20 @@ module KC_ListMap exposing (suite)
 
    The syntax of the map looks like that:
 
-   List.map (\el -> String.fromInt el) [1, 2, 3]
+     List.map (\el -> String.fromInt el) [1, 2, 3]
 
    Since String.fromInt function is being applied to the incoming argument we
    can simplify this code a bit:
 
-   List.map String.fromInt [1, 2, 3]
+     List.map String.fromInt [1, 2, 3]
 
    Similarly, when we are dealing with records we can shorten
 
-   List.map (\user -> user.name) users
+     List.map (\user -> user.name) users
 
    to
 
-   List.map .name users
+     List.map .name users
 
 
    In the Tuple chapter, we asked you to implement a stringAndLenght function that
