@@ -11,7 +11,7 @@ wrongFloat =
 
 
 {-
-   TODO: Excercise 1
+   TODO: Exercise 1
    Implement multiply function
    https://package.elm-lang.org/packages/elm/core/latest/Basics
 -}
@@ -24,7 +24,7 @@ multiply n value =
 
 
 {-
-   TODO: Excercise 2
+   TODO: Exercise 2
    Implement pagesCount function
 -}
 
