@@ -1,4 +1,4 @@
-module K_List exposing (collect3, tailTip, wordsAndLengths)
+module K_List exposing (..)
 
 {-
    TODO: Exercise 1
