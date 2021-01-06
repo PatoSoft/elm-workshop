@@ -53,3 +53,17 @@ type alias MovingPoint =
 createMovingPoint : Float -> Float -> Float -> Float -> MovingPoint
 createMovingPoint x y vx vy =
     {}
+
+
+
+{-
+   TODO: Exercise 4
+
+   Implement updatePointPosition, that takes a MovingPoint and a timeDelta (float) value
+
+   The idea is that the x and the y will be updated based on the time delta and the vector coordinates like so:
+
+   newX = x + vector.x * timeDelta
+   newY = y + vector.y * timeDelta
+
+-}
