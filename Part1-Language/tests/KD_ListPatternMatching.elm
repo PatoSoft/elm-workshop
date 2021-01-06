@@ -1,19 +1,26 @@
 module KD_ListPatternMatching exposing (suite)
 
 {-
-    Open src/Part1-Language/src//K_List.elm and implement FUNCTION
+   We saw pattern matching before in other exercises, and it's something you can also use for lists.
+   On list pattern matching uses the :: operator, and basically allows you to extract the first element of the list and separate it from the rest
+   so if we were going to use pattern matching to find the last element of a list, this would be the implementation:
 
-   tailTip2 : List item -> Maybe item
-   tailTip2 items =
-       case items of
-           a :: [] ->
-               Just a
+     tailTip2 : List item -> Maybe item
+     tailTip2 items =
+         case items of
+             head :: [] ->
+                 Just head
 
-           a :: rest ->
-               tailTip2 rest
+             head :: rest ->
+                 tailTip2 rest
 
-           _ ->
-               Nothing
+             _ ->
+                 Nothing
+
+
+    Now let's try to implement the map function ourself using the same pattern matching implementation
+
+    Open Part1-Language/src/K_List.elm and implement myMap
 -}
 
 import Expect exposing (..)
@@ -22,13 +29,13 @@ import Test exposing (..)
 
 
 suite =
-    describe "FUNCTION"
+    describe "myMap"
         [ test """
-      when XXX is passed returns YYY
+      when String.fromInt [1, 2, 3] is passed returns ["1", "2", "3"]
       """ <|
-            \_ -> Expect.equal YYY (FUNCTION XXX)
+            \_ -> Expect.equal [ "1", "2", "3" ] (myMap String.fromInt [ 1, 2, 3 ])
         , test """
-      when XXX is passed returns YYY
+      when .y is passed returns [10, 20]
       """ <|
-            \_ -> Expect.equal YYY (FUNCTION XXX)
+            \_ -> Expect.equal [ 10, 20 ] (myMap .y [ { y = 10 }, { y = 20 } ])
         ]
