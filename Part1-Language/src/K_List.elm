@@ -1,4 +1,4 @@
-module K_List exposing (collect3, tailTip)
+module K_List exposing (collect3, tailTip, wordsAndLengths)
 
 {-
    TODO: Exercise 1
@@ -22,7 +22,17 @@ collect3 a b c =
 
 tailTip : List item -> Maybe item
 tailTip items =
+    Nothing
 
--- stringAndLength : String -> ( String, Int )
--- stringAndLength value =
---     ( "", 10 )
+
+
+{-
+   TODO: Exercise 3
+   Implement tailTip function
+   https://package.elm-lang.org/packages/elm/core/latest/List
+-}
+
+
+wordsAndLengths : String -> List ( String, Int )
+wordsAndLengths sentence =
+    []
