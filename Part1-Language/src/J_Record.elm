@@ -1,3 +1,18 @@
-module J_Lists exposing (..)
+module J_Record exposing (..)
 
--- reminder of lists v.s. array (e.g. can't access by element)
+{-
+   TODO: Exercise 1
+
+   Implement person, that just returns the equivalent of this ruby code:
+     def person
+       {
+         name: 'L',
+         surname: 'Lawliet',
+         nickname: 'Ryuzaki'
+       }
+     end
+-}
+
+
+person =
+    {}
