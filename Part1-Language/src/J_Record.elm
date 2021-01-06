@@ -67,3 +67,18 @@ createMovingPoint x y vx vy =
    newY = y + vector.y * timeDelta
 
 -}
+{-
+   TODO: Exercise 5
+
+   Implement distanceFromOrigin for a point, this time by using the pattern matching on the moving point parameter.
+
+   The syntax for the pattern matching is the following:
+
+     fullName : Person ->String
+     fullName {name, surname} =
+       name ++ surname
+
+   the calculation in pseudo-code should be
+
+     square root ( x ^ 2 + y ^ 2)
+-}
