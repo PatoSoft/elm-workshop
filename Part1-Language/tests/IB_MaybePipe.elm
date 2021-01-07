@@ -16,7 +16,8 @@ module IB_MaybePipe exposing (suite)
          String.toInt value
          |> Maybe.withDefault 0
 
-   The idea is that the output of the operation will be passed as the next parameter to the next function call
+   The idea is that the output of the operation will be passed as the next parameter to the next function call.
+   Because of this reason you might find by working in elm that functions normally take the most important argument as the last one. This is the reason why
 
    Try to implement a function to do the same as the above but parses a float value and returns 0.0 when the string does not match
 
