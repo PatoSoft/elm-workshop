@@ -1,4 +1,4 @@
-module B_StringBasics exposing (..)
+module B_StringBasics exposing (hello1, hello2, hello3, lengthOfString, removeTextFromString, wrongInt, wrongString)
 
 
 wrongInt =
@@ -16,6 +16,9 @@ wrongString =
    TODO: Exercise 1
    Implement lengthOfString using the functions provided in the String module
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Example of usage:
+     lengthOfString "Hello"
 -}
 
 
@@ -29,6 +32,9 @@ lengthOfString string =
    TODO: Exercise 2
    Implement hello1 by using the ++ operator on strings
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Example of usage:
+     hello1 "Bob"
 -}
 
 
@@ -42,6 +48,9 @@ hello1 subject =
    TODO: Exercise 3
    Implement hello2 by using the append operator on strings
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Example of usage:
+     hello2 "Bob"
 -}
 
 
@@ -56,6 +65,9 @@ hello2 subject =
    Use append to implement hello3, note that you can use let blocks to declare functions, in this case
    we create a curried version of append called 'hello' and we can use it to the string passed in
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Example of usage:
+     hello3 "Bob"
 -}
 
 
@@ -73,9 +85,12 @@ hello3 subject =
    TODO: Exercise 5
    Use one of the functions in the String module to implement 'removeTextFromString'
    https://package.elm-lang.org/packages/elm/core/latest/String
+
+   Example of usage:
+     removeTextFromString "not" "Masks do not work!"
 -}
 
 
 removeTextFromString : String -> String -> String
-removeTextFromString textToRemove string =
+removeTextFromString substring string =
     wrongString

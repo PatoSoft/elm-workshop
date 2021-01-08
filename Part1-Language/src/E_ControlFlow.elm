@@ -1,4 +1,4 @@
-module E_ControlFlow exposing (..)
+module E_ControlFlow exposing (fizzbuzz, ternaryOperator)
 
 {-
    TODO: Exercise 1:

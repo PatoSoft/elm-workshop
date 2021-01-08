@@ -1,4 +1,4 @@
-module AB_FunctionsSumWithCurrying exposing (suite)
+module AC_FunctionsSumWithCurrying exposing (suite)
 
 {-
    Currying is a powerful tool in functional programming languages.
@@ -53,4 +53,4 @@ suite =
     test """
   passing 5 it returns 7
   """ <|
-        \_ -> Expect.equal 7 (add2 5)
+        \_ -> Expect.equal 7 (addTwo 5)
