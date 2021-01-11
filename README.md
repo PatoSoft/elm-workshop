@@ -29,6 +29,15 @@ Fswatch can be installed on mac with either macports or brew,
 if you don't have either follow the instructions on the page linked above
 On linux should be available through the normal package manager
 
+### Editor plugins
+Install elm plugin and elm-format into your editor.
+
+- VSCode: https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode
+- Vim: https://github.com/ElmCast/elm-vim
+- Emacs: https://github.com/jcollard/elm-mode
+- Atom: https://atom.io/packages/language-elm
+
+
 Once everything is set up run the workshop by running
 ```
 ./workshop 

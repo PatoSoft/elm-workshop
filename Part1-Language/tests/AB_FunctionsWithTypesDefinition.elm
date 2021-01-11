@@ -1,4 +1,4 @@
-module AC_FunctionsWithTypesDefinition exposing (suite)
+module AB_FunctionsWithTypesDefinition exposing (suite)
 
 {-
    So far we looked at functions that elm automatically define, via static
@@ -30,7 +30,13 @@ import Test exposing (..)
 
 
 suite =
-    test """
+    describe "isEvent"
+        [ test """
   passing 2 returns True
   """ <|
-        \_ -> Expect.equal True (A_FunctionsBasics.isEven 2)
+            \_ -> Expect.equal True (A_FunctionsBasics.isEven 2)
+        , test """
+  passing 5 returns False
+  """ <|
+            \_ -> Expect.equal False (A_FunctionsBasics.isEven 5)
+        ]
