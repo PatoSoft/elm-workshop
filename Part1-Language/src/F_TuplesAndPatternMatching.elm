@@ -82,7 +82,7 @@ readSecondValueAssignment tuple =
      distanceFromOrigin (x, y) =
        sqrt ( toFloat (x ^ 2 + y ^ 2) )
 
-   implement reading the second value by using the same functionality
+   implement reading the second value by using pattern matching on function arguments
 -}
 
 
