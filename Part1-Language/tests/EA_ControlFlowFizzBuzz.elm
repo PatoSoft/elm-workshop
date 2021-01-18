@@ -21,7 +21,7 @@ module EA_ControlFlowFizzBuzz exposing (suite)
    Only when the number can be divided by 5 without any rest for the division
 
    Also feel free to use
-     Int.toString number
+     String.fromInt number
    to show the string representation for the number
    Implement the fizzbuzz function in the file src/E_ControlFlow.elm
 -}
