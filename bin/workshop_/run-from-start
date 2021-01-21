@@ -9,6 +9,14 @@ require_cmd 'elm' 'Please install it from here:' 'https://guide.elm-lang.org/ins
 require_cmd 'fswatch' 'Please install it from here:' 'https://emcrisostomo.github.io/fswatch/getting.html'
 require_cmd 'elm-test' 'Please install it by running:' '> npm install -g elm-test'
 
+elm --version | grep '0.19.1' 1> /dev/null
+if [ "$?" != "0" ] 
+then
+  echo "please install elm 0.19.1 your installed version is:"
+  elm --version
+  exit 0
+fi
+
 elm make > /dev/null 2>&1
 echo "Check done!"
 
