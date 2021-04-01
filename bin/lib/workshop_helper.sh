@@ -36,7 +36,7 @@ function execute_test {
   local cmd="fake_tty elm-test $file"
   local output=$($cmd 2>&1)
 
-  while grep -qiE 'TEST RUN FAILED|Compilation failed' <<< "$output";
+  while grep -qiE 'TEST RUN FAILED|Compilation failed|NAMING ERROR' <<< "$output";
   do
     echo "$output"
 
