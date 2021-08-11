@@ -1,7 +1,6 @@
 module HA_TypesCardSuit exposing (suite)
 
 {-
-   TODO: I need help here :D
    Elm is a strongly typed language, and has an amazing static analiser.
    Those two things allow you to develop and refactor big pieces of code with the compiler supporting you in the process and ensuring the implementation is sound.
    You can imagine having a complex application in javascript, adding a parameter to a function and getting an error in runtime, in this scenario, in elm, the code would simply not compile.
