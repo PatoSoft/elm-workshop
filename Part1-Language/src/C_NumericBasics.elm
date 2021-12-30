@@ -22,7 +22,7 @@ wrongFloat =
 
 multiply : Int -> Float -> Float
 multiply n value =
-    wrongInt
+    toFloat n * value
 
 
 
@@ -37,4 +37,4 @@ multiply n value =
 
 pagesCount : Int -> Int -> Int
 pagesCount perPage resultsCount =
-    wrongInt
+    resultsCount // perPage + 1

@@ -1,5 +1,7 @@
 module B_StringBasics exposing (hello1, hello2, hello3, lengthOfString, removeTextFromString, wrongInt, wrongString)
 
+import Html exposing (sub)
+
 
 wrongInt =
     0
@@ -24,7 +26,7 @@ wrongString =
 
 lengthOfString : String -> Int
 lengthOfString string =
-    wrongInt
+    String.length string
 
 
 
@@ -40,7 +42,7 @@ lengthOfString string =
 
 hello1 : String -> String
 hello1 subject =
-    "Hello " ++ wrongString
+    "Hello " ++ subject
 
 
 
@@ -56,7 +58,7 @@ hello1 subject =
 
 hello2 : String -> String
 hello2 subject =
-    wrongString
+    String.append "Hello " subject
 
 
 
@@ -75,9 +77,9 @@ hello3 : String -> String
 hello3 subject =
     let
         hello =
-            String.append "Hello"
+            String.append "Hello" " "
     in
-    hello wrongString
+    String.append hello subject
 
 
 
@@ -93,4 +95,4 @@ hello3 subject =
 
 removeTextFromString : String -> String -> String
 removeTextFromString substring string =
-    wrongString
+    String.join "" (String.split substring string)

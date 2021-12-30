@@ -22,12 +22,12 @@ sum a b =
 binomialFunction x y =
     let
         xPart =
-            0
+            x * 3
 
         yPart =
-            0
+            y * 6
     in
-    wrongValue
+    xPart + yPart + 3
 
 
 
@@ -43,8 +43,8 @@ binomialFunction x y =
 
 
 isEven : Int -> Bool
-isEven changeMe =
-    False
+isEven x =
+    modBy 2 x == 0
 
 
 
@@ -58,8 +58,8 @@ isEven changeMe =
 
 
 addTwo : Int -> Int
-addTwo changeMe =
-    wrongValue
+addTwo a =
+    a + 2
 
 
 
@@ -81,7 +81,7 @@ addTwo changeMe =
 
 apply : (Int -> Int) -> Int -> Int
 apply fn value =
-    wrongValue
+    fn value
 
 
 
@@ -97,4 +97,4 @@ apply fn value =
 
 applySum3 : Int -> Int
 applySum3 value =
-    apply (sum 3) wrongValue
+    apply (sum 3) value

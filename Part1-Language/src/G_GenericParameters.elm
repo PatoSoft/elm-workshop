@@ -20,3 +20,12 @@ genericParameterSyntaxExample firstFunction secondFunction firstArg secondArg =
 
    the function is called ternaryOperator
 -}
+
+
+ternaryOperator : Bool -> aValue -> aValue -> aValue
+ternaryOperator a b c =
+    if a then
+        b
+
+    else
+        c

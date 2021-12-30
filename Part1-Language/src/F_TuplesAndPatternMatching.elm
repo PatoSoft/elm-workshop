@@ -17,7 +17,7 @@ tupleExample =
 
 stringAndLength : String -> ( String, Int )
 stringAndLength value =
-    ( "", 10 )
+    ( value, String.length value )
 
 
 
@@ -30,7 +30,7 @@ stringAndLength value =
 
 readFirstValue : ( String, Int ) -> String
 readFirstValue tuple =
-    ""
+    Tuple.first tuple
 
 
 
@@ -43,7 +43,10 @@ readFirstValue tuple =
 
 readSecondValue : ( String, Int ) -> Int
 readSecondValue tuple =
-    0
+    let
+        (-, secondValue) = tuple
+    in
+        secondValue
 
 
 

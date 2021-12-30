@@ -21,16 +21,44 @@ module H_Types exposing (..)
 
 type Suit
     = Hearts
+    | Clubs
+    | Spades
+    | Diamonds
 
 
 stringToSuit : String -> Suit
 stringToSuit string =
-    Hearts
+    case string of
+        "Hearts" ->
+            Hearts
+
+        "Clubs" ->
+            Clubs
+
+        "Spades" ->
+            Spades
+
+        "Diamonds" ->
+            Diamonds
+
+        _ ->
+            Diamonds
 
 
 suitToString : Suit -> String
 suitToString suit =
-    ""
+    case suit of
+        Hearts ->
+            "Hearts"
+
+        Clubs ->
+            "Clubs"
+
+        Spades ->
+            "Spades"
+
+        Diamonds ->
+            "Diamonds"
 
 
 type ValueCard
@@ -89,6 +117,20 @@ remoteLoad state data =
 -}
 
 
+type State
+    = Loading
+    | Loaded String String
+    | Error String
+
+
 printProfile : Profile -> String
 printProfile profile =
-    ""
+    case profile of
+        Loading ->
+            "Loading"
+
+        Loaded name surname ->
+            "Welcome back " ++ name ++ " " ++ surname
+
+        Error title ->
+            "There was an error loading your profile: " ++ title

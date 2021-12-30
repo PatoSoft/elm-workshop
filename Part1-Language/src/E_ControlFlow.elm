@@ -21,11 +21,15 @@ module E_ControlFlow exposing (fizzbuzz, ternaryOperator)
     The number if the number is not any of the above
 -}
 
-
+fizzbuzz : Int -> String
 fizzbuzz value =
-    ""
 
 
+    response = ""
+    response = if modBy 3 value == 0 then response ++ "Fizz"
+    response = if modBy 5 value == 0 then response ++ "Buzz"
+    response = if response == "" then value
+    response
 
 {-
    TODO: Exercise 2:
@@ -48,4 +52,4 @@ fizzbuzz value =
 
 ternaryOperator : Bool -> String -> String -> String
 ternaryOperator a b c =
-    ""
+    if a then b else c

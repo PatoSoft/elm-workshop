@@ -12,7 +12,7 @@ module D_BoolBasics exposing (nAnd, notEqual)
 
 notEqual : Float -> Int -> Bool
 notEqual a b =
-    False
+    a /= toFloat b
 
 
 
@@ -28,4 +28,4 @@ notEqual a b =
 
 nAnd : Bool -> Bool -> Bool
 nAnd a b =
-    False
+    not (a && b)
