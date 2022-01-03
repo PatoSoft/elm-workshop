@@ -9,7 +9,7 @@ module K_List exposing (..)
 
 collect3 : item -> item -> item -> List item
 collect3 a b c =
-    []
+    [ a, b, c ]
 
 
 
@@ -22,7 +22,15 @@ collect3 a b c =
 
 tailTip : List item -> Maybe item
 tailTip items =
-    Nothing
+    case items of
+        [] ->
+            Nothing
+
+        [ last ] ->
+            Just last
+
+        _ :: rest ->
+            tailTip rest
 
 
 
@@ -35,7 +43,7 @@ tailTip items =
 
 wordsAndLengths : String -> List ( String, Int )
 wordsAndLengths sentence =
-    []
+    List.map (\word -> ( word, String.length word )) (String.split " " sentence)
 
 
 
@@ -61,6 +69,19 @@ wordsAndLengths sentence =
 -}
 
 
+tailTip2 : List item -> Maybe item
+tailTip2 items =
+    case items of
+        head :: [] ->
+            Just head
+
+        head :: rest ->
+            tailTip2 rest
+
+        _ ->
+            Nothing
+
+
 myMap : (item -> val) -> List item -> List val
 myMap fun items =
-    []
+    List.map fun items
