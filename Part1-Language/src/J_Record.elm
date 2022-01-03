@@ -15,7 +15,10 @@ module J_Record exposing (..)
 
 
 person =
-    {}
+    { name = "L"
+    , surname = "Lawliet"
+    , nickname = "Ryuzaki"
+    }
 
 
 
@@ -30,7 +33,8 @@ person =
 
 readMaybeNickname : Maybe { name : String, nickname : String } -> String
 readMaybeNickname value =
-    ""
+    Maybe.map .nickname value
+        |> Maybe.withDefault ""
 
 
 
@@ -47,12 +51,24 @@ readMaybeNickname value =
 
 
 type alias MovingPoint =
-    {}
+    { x : Float
+    , y : Float
+    , vector :
+        { x : Float
+        , y : Float
+        }
+    }
 
 
 createMovingPoint : Float -> Float -> Float -> Float -> MovingPoint
 createMovingPoint x y vx vy =
-    {}
+    { x = x
+    , y = y
+    , vector =
+        { x = vx
+        , y = vy
+        }
+    }
 
 
 
@@ -67,6 +83,14 @@ createMovingPoint x y vx vy =
    newY = y + vector.y * timeDelta
 
 -}
+
+
+updatePointPosition : MovingPoint -> Float -> MovingPoint
+updatePointPosition point timeDelta =
+    { point | x = point.x + (point.vector.x * timeDelta), y = point.y + (point.vector.y * timeDelta) }
+
+
+
 {-
    TODO: Exercise 5
 
@@ -82,3 +106,8 @@ createMovingPoint x y vx vy =
 
      square root ( x ^ 2 + y ^ 2)
 -}
+
+
+distanceFromOrigin : MovingPoint -> Float
+distanceFromOrigin { x, y } =
+    sqrt (x ^ 2 + y ^ 2)
